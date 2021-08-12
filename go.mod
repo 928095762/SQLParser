@@ -1,4 +1,4 @@
-module SQLParser
+module github.com/928095762/SQLParser
 
 go 1.16
 

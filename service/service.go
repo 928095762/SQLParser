@@ -1,6 +1,6 @@
 package service
 
-import "SQLParser/clickhouse_parser"
+import "github.com/928095762/SQLParser/clickhouse_parser"
 
 func Excute(input,outputFilePath,flag string){
 	driver := clickhouse_parser.ClickhouseDrive{}

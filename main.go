@@ -1,7 +1,7 @@
 package main
 
 import (
-	"SQLParser/service"
+	"github.com/928095762/SQLParser/service"
 	"github.com/spf13/cobra"
 )
 

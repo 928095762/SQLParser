@@ -1,8 +1,8 @@
 package external
 
 import (
-	"SQLParser/clickhouse_parser"
-	"SQLParser/parser"
+	"github.com/928095762/SQLParser/clickhouse_parser"
+	"github.com/928095762/SQLParser/parser"
 	"strings"
 )
 

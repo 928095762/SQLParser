@@ -1,8 +1,8 @@
 package clickhouse_parser
 
 import (
-	"SQLParser/parser"
-	"SQLParser/utils"
+	"github.com/928095762/SQLParser/parser"
+	"github.com/928095762/SQLParser/utils"
 	"encoding/json"
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
