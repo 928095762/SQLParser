@@ -1,0 +1,32 @@
+TableName:realtime.f_order_sa_troubleshoot_hourly_local
+--- Columns ---
+`standard_endpoint_owner_id`: Int64
+`standard_endpoint_visibility`: LowCardinality(String)
+`user_agent_visibility`: LowCardinality(String)
+`candidated_ads`: Int64
+`distinct_selected_primary_ads`: Int64
+`standard_programmer_visibility`: LowCardinality(String)
+`user_dma_code`: Int64
+`standard_endpoint_id`: Int64
+`ad_error_id`: Int64
+`selected_primary_ads`: Int64
+`standard_programmer_id`: Int64
+`ad_error_category_id`: Int64
+`candidate_orders`: Int64
+`selected_orders`: Int64
+`opportunity`: Int64
+`event_date`: DateTime
+`standard_brand_visibility`: LowCardinality(String)
+`standard_device_visibility`: LowCardinality(String)
+`standard_brand_id`: Int64
+`inbound_order_id`: Int64
+`standard_endpoint_owner_visibility`: LowCardinality(String)
+`order_error_id`: Int64
+`filtered_orders`: Int64
+`filtered_ads`: Int64
+`error_ads`: Int64
+`outbound_order_id`: Int64
+network_id: Int64
+`geo_dma_visibility`: LowCardinality(String)
+`error_category_ads`: Int64
+`standard_device_type_id`: Int64

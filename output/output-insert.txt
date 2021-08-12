@@ -1,0 +1,20 @@
+--- Columns ---
+buyer_ids:
+integration_type:
+outbound_opportunity:
+event_date:
+outbound_request_user_matched:
+imp_no_bids:
+auction_status:
+site_id:
+time_position_class:
+device_type:
+dsp_id:
+outbound_request:
+error_code:
+network_id:
+asset_id:
+series_id:
+site_section_id:
+country_id:
+buyer_group_id:

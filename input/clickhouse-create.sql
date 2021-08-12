@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS realtime.f_order_sa_troubleshoot_hourly_local  (
+                                                                              network_id Int64 DEFAULT -1,
+                                                                              `inbound_order_id` Int64 DEFAULT -1,
+                                                                              `outbound_order_id` Int64 DEFAULT -1,
+                                                                              `standard_brand_id` Int64 DEFAULT -1,
+                                                                              `standard_brand_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `standard_device_type_id` Int64 DEFAULT -1,
+    `standard_device_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `standard_programmer_id` Int64 DEFAULT -1,
+    `standard_programmer_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `user_dma_code` Int64 DEFAULT -1,
+    `geo_dma_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `standard_endpoint_owner_id` Int64 DEFAULT -1,
+    `standard_endpoint_owner_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `standard_endpoint_id` Int64 DEFAULT -1,
+    `standard_endpoint_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `order_error_id` Int64 DEFAULT -1,
+    `ad_error_category_id` Int64 DEFAULT -1,
+    `ad_error_id` Int64 DEFAULT -1,
+    `user_agent_visibility` LowCardinality(String) DEFAULT 'FULL_VISIBILITY',
+    `candidate_orders` Int64 DEFAULT 0,
+    `selected_orders` Int64 DEFAULT 0,
+    `filtered_orders` Int64 DEFAULT 0,
+    `opportunity` Int64 DEFAULT 0,
+    `candidated_ads` Int64 DEFAULT 0,
+    `selected_primary_ads` Int64 DEFAULT 0,
+    `distinct_selected_primary_ads` Int64 DEFAULT 0,
+    `filtered_ads` Int64 DEFAULT 0,
+    `error_category_ads` Int64 DEFAULT 0,
+    `error_ads` Int64 DEFAULT 0,
+    `event_date` DateTime
+    )
+    ENGINE = SummingMergeTree
+    PARTITION BY toStartOfHour(event_date)
+    PRIMARY KEY (network_id, event_date, inb);

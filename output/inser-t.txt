@@ -1,0 +1,21 @@
+TableName:aggregate.f_market_outbound_auction_hourly
+--- Columns ---
+buyer_ids: 
+integration_type: 
+outbound_opportunity: 
+network_id: 
+site_id: 
+country_id: 
+device_type: 
+series_id: 
+error_code: 
+outbound_request_user_matched: 
+imp_no_bids: 
+buyer_group_id: 
+outbound_request: 
+event_date: 
+auction_status: 
+asset_id: 
+site_section_id: 
+time_position_class: 
+dsp_id: 

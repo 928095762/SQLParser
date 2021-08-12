@@ -1,0 +1,53 @@
+--- Columns ---
+ad_views:sum(ack.adView)
+clicks:sum(ack.click)
+network_id:network.networkId
+transaction_type:network.role
+placement_id:IF(network.networkIsAdOwner,placementId,-1)
+ad_id:IF(network.networkIsAdOwner,adId,-1)
+creative_id:creativeId
+outbound_mrm_rule_id:network.ruleId
+content_owner_fee:sum(ROUND(network.contentOwnerRevenue*ack.fireEventRevenueRatio,5))
+event_date:date_trunc('HOUR',cast(ack.ackTimestampastimestamp))
+reseller_id:network.resellerNetworkId
+ad_unit_id:IF(network.networkIsExtraItemOwner,adUnitId,-1)
+inbound_mrm_rule_id:network.inboundRuleId
+no_ad_views:sum(IF(network.networkIsAdOwner,ack.noAdView,0))
+reseller_revenue:sum(ROUND(network.resellerRevenue*ack.fireEventRevenueRatio,5))
+process_batch_id:"<%process_batch_id%>"
+content_owner_id:network.contentOwnerNetworkId
+ad_type:CASEWHENadIsBumperAdandisOwnedByRootCROTHEN'BUMPER'WHENadIsExternalandnetwork.networkIsAdOwnerTHEN'EXTERNAL_AD'WHENack.isEmbeddedTrackingAdEventandnetwork.networkIsAdOwnerTHEN'TRACKING_AD'WHENack.isTrackingURLEventandnetwork.networkIsAdOwnerTHEN'TRACKING_URL'ELSE'NORMAL'END
+time_position_class:adSlot.timePositionClass
+revenue:sum(ROUND(network.revenue*ack.fireEventRevenueRatio,5))
+distributor_id:network.distributorNetworkId
+traffic_type:ack.eventTrafficType
+rendition_id:ack.creativeRenditionId
+bit_flag:network.bitFlags+adBitFlags+requestBitFlags
+distributor_fee:sum(ROUND(network.distributorRevenue*ack.fireEventRevenueRatio,5))
+TableName:AdvertisementContext
+--- Columns ---
+clicks: sum(ack.click)
+content_owner_id: network.contentOwnerNetworkId
+reseller_id: network.resellerNetworkId
+transaction_type: network.role
+time_position_class: adSlot.timePositionClass
+bit_flag: network.bitFlags+adBitFlags+requestBitFlags
+no_ad_views: sum(IF(network.networkIsAdOwner,ack.noAdView,0))
+revenue: sum(ROUND(network.revenue*ack.fireEventRevenueRatio,5))
+distributor_id: network.distributorNetworkId
+placement_id: IF(network.networkIsAdOwner,placementId,-1)
+creative_id: creativeId
+outbound_mrm_rule_id: network.ruleId
+inbound_mrm_rule_id: network.inboundRuleId
+reseller_revenue: sum(ROUND(network.resellerRevenue*ack.fireEventRevenueRatio,5))
+content_owner_fee: sum(ROUND(network.contentOwnerRevenue*ack.fireEventRevenueRatio,5))
+process_batch_id: "<%process_batch_id%>"
+network_id: network.networkId
+traffic_type: ack.eventTrafficType
+ad_id: IF(network.networkIsAdOwner,adId,-1)
+rendition_id: ack.creativeRenditionId
+ad_unit_id: IF(network.networkIsExtraItemOwner,adUnitId,-1)
+ad_type: CASEWHENadIsBumperAdandisOwnedByRootCROTHEN'BUMPER'WHENadIsExternalandnetwork.networkIsAdOwnerTHEN'EXTERNAL_AD'WHENack.isEmbeddedTrackingAdEventandnetwork.networkIsAdOwnerTHEN'TRACKING_AD'WHENack.isTrackingURLEventandnetwork.networkIsAdOwnerTHEN'TRACKING_URL'ELSE'NORMAL'END
+ad_views: sum(ack.adView)
+distributor_fee: sum(ROUND(network.distributorRevenue*ack.fireEventRevenueRatio,5))
+event_date: date_trunc('HOUR',cast(ack.ackTimestampastimestamp))
